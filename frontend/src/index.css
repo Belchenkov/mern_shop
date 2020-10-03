@@ -1,15 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap');
 
 body {
-    font-family: 'Titillium Web', sans-serif
+    font-family: 'Titillium Web', sans-serif;
 }
 
 main {
     min-height: 80vh;
+    background-color: rgb(43 45 40 / 5%);
 }
 
 .header a {
-    font-weight: bold;
+    font-weight: 900;
+    text-shadow: 0 0 5px #000;
+    font-size: 20px;
+    color: rgba(255, 255, 255, .8) !important;
+    transition: color .3s ease-out;
+}
+
+.header a:hover {
+    color: rgba(255, 255, 255, 1) !important;
 }
 
 h1 {

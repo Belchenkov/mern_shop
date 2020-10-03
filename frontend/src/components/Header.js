@@ -11,7 +11,7 @@ const Header = () => {
             <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
                 <Container>
                     <Navbar.Brand href='/'>
-
+                        <img src="https://img.icons8.com/carbon-copy/45/000000/shop.png"/>
                         ProShop
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
