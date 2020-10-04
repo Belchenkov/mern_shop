@@ -24,3 +24,11 @@ main {
 h1 {
     font-weight: 900;
 }
+
+h3 {
+    padding: 1rem 0;
+}
+
+.rating span {
+    margin: .1rem;
+}
