@@ -9,6 +9,10 @@ main {
     background-color: rgb(43 45 40 / 5%);
 }
 
+footer {
+    line-height: 2.5;
+}
+
 .header a {
     font-weight: 900;
     text-shadow: 0 0 5px #000;
@@ -31,4 +35,8 @@ h3 {
 
 .rating span {
     margin: .1rem;
+}
+
+.img-fluid {
+    border: 3px solid #fff;
 }
