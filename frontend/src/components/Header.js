@@ -13,7 +13,9 @@ const Header = () => {
                 <Container>
                     <LinkContainer to="/">
                         <Navbar.Brand>
-                            <img src="https://img.icons8.com/carbon-copy/45/000000/shop.png"/>
+                            <img
+                                alt="logo"
+                                src="https://img.icons8.com/carbon-copy/45/000000/shop.png"/>
                             ProShop
                         </Navbar.Brand>
                     </LinkContainer>
