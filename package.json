@@ -2,6 +2,7 @@
   "name": "proshop_mern",
   "version": "1.0.0",
   "description": "MERN Shopping Cart App",
+  "type": "module",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
