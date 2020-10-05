@@ -5,12 +5,11 @@ body {
 }
 
 main {
-    min-height: 80vh;
+    min-height: calc(100vh - 130px);
     background-color: rgb(43 45 40 / 5%);
 }
 
 footer {
-    line-height: 2.5;
 }
 
 .header a {
