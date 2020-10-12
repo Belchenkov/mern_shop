@@ -26,10 +26,16 @@ footer {
 
 h1 {
     font-weight: 900;
+    padding: 1rem 0;
 }
 
 h3 {
     padding: 1rem 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    padding: .5rem 0;
 }
 
 .rating span {
