@@ -9,19 +9,16 @@ main {
     background-color: rgb(43 45 40 / 5%);
 }
 
-footer {
-}
-
 .header a {
     font-weight: 900;
     text-shadow: 0 0 5px #000;
     font-size: 20px;
-    color: rgba(255, 255, 255, .8) !important;
+    color: rgba(255, 255, 255, .8);
     transition: color .3s ease-out;
 }
 
 .header a:hover {
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(255, 255, 255, 1);
 }
 
 h1 {
@@ -44,4 +41,13 @@ h2 {
 
 .img-fluid {
     border: 3px solid #fff;
+}
+
+a.dropdown-item {
+    text-shadow: none;
+    color: #000;
+}
+
+a.dropdown-item:hover {
+    color: #000;
 }
