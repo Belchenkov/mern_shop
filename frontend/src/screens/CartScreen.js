@@ -34,7 +34,7 @@ const CartScreen = ({ match, location, history }) => {
     };
 
     const checkoutHandler = () => {
-
+        history.push('/login?redirect=shipping');
     };
 
     return (
@@ -107,7 +107,7 @@ const CartScreen = ({ match, location, history }) => {
                                 type="button"
                                 className="btn btn-block btn-success"
                                 disabled={cartItems.length === 0}
-                                onClick={() => checkoutHandler}
+                                onClick={checkoutHandler}
                             >
                                 <i className="fas fa-credit-card mr-2" />
                                 Proceed to checkout
