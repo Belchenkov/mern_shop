@@ -45,6 +45,7 @@ const OrderScreen = ({ match }) => {
             script.onload = () => {
                 setSdkReady(true);
             }
+
             document.body.appendChild(script);
         };
 
