@@ -42,46 +42,50 @@ const LoginScreen = ({ location, history }) => {
             { error && <Message variant="danger">{error}</Message> }
             { loading && <Loader /> }
 
-            <Form onSubmit={submitHandler}>
-                <Form.Group controlId="email">
-                    <Form.Label>
-                        <i className="fas fa-at mr-1" />
-                        Email Address
-                    </Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="password">
-                    <Form.Label>
-                        <i className="fas fa-key mr-1" />
-                        Password
-                    </Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Enter password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                </Form.Group>
-                <Button type="submit" variant="primary">
-                    <i className="fas fa-sign-in-alt mr-1" />
-                    Sign In
-                </Button>
-            </Form>
+            { !loading && (
+                <>
+                    <Form onSubmit={submitHandler}>
+                        <Form.Group controlId="email">
+                            <Form.Label>
+                                <i className="fas fa-at mr-1" />
+                                Email Address
+                            </Form.Label>
+                            <Form.Control
+                                type="email"
+                                placeholder="Enter email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="password">
+                            <Form.Label>
+                                <i className="fas fa-key mr-1" />
+                                Password
+                            </Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Enter password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Button type="submit" variant="primary">
+                            <i className="fas fa-sign-in-alt mr-1" />
+                            Sign In
+                        </Button>
+                    </Form>
 
-            <Row className="py-4">
-                <Col>
-                    New Customer?
-                    <Link
-                        className="ml-2 font-weight-bold"
-                        to={redirect ? `/register?redirect=${redirect}`: '/register'}
-                    >Register</Link>
-                </Col>
-            </Row>
+                    <Row className="py-4">
+                        <Col>
+                            New Customer?
+                            <Link
+                                className="ml-2 font-weight-bold"
+                                to={redirect ? `/register?redirect=${redirect}`: '/register'}
+                            >Register</Link>
+                        </Col>
+                    </Row>
+                </>
+            ) }
         </FormContainer>
     );
 };
