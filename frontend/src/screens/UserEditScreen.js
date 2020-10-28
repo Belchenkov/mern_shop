@@ -9,7 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
-import { getUserDetails } from "../actions/userActions";
+import { getUserDetails, updateUser } from "../actions/userActions";
+import { USER_UPDATE_RESET } from "../constants/userConstants";
 
 const UserEditScreen = ({ match, history }) => {
     const userId = match.params.id;
@@ -22,21 +23,37 @@ const UserEditScreen = ({ match, history }) => {
     const userDetails = useSelector(state => state.userDetails);
     const { loading, error, user } = userDetails;
 
-    useEffect(() => {
-        if (!user.name || user._id !== userId) {
-            dispatch(getUserDetails(userId));
-        } else {
-            const { name, email, isAdmin } = user;
+    const userUpdate = useSelector(state => state.userUpdate);
+    const { loading: loadingUpdate, error: errorUpdate, success: successUpdate } = userUpdate;
 
-            setName(name);
-            setEmail(email);
-            setIsAdmin(isAdmin);
+    useEffect(() => {
+        if (successUpdate) {
+            dispatch({
+                type: USER_UPDATE_RESET
+            });
+            history.push('/admin/users');
+        } else {
+            if (!user.name || user._id !== userId) {
+                dispatch(getUserDetails(userId));
+            } else {
+                const { name, email, isAdmin } = user;
+
+                setName(name);
+                setEmail(email);
+                setIsAdmin(isAdmin);
+            }
         }
-    }, [userId, dispatch, user])
+    }, [userId, dispatch, user, successUpdate, history])
 
     const submitHandler = e => {
         e.preventDefault();
 
+        dispatch(updateUser({
+            _id: userId,
+            name,
+            email,
+            isAdmin
+        }));
     };
 
     return (
@@ -47,6 +64,9 @@ const UserEditScreen = ({ match, history }) => {
             </Link>
             <FormContainer>
                 <h1>Edit User</h1>
+
+                { loadingUpdate && <Loader /> }
+                { errorUpdate && <Message variant="danger">{errorUpdate}</Message> }
 
                 { error && <Message variant="danger">{error}</Message> }
                 { loading && <Loader /> }
