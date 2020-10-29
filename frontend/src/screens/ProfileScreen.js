@@ -155,36 +155,40 @@ const ProfileScreen = ({ history }) => {
                                 </tr>
                             </thead>
                             <tbody className="text-center">
-                                { orders.map((order, i) => (
-                                    <tr key={order._id}>
-                                        <td>{ i + 1 }</td>
-                                        <td>{ order._id }</td>
-                                        <td>{ order.createdAt.substring(0, 10) }</td>
-                                        <td>${ order.totalPrice }</td>
-                                        <td>{ order.isPaid
-                                            ? order.paidAt.substring(0, 10)
-                                            : (
-                                                <i className="fas fa-times" style={{color: 'red'}} />
-                                              )
-                                            }
-                                        </td>
-                                        <td>{ order.isDelivered
-                                            ? order.deliveredAt.substring(0, 10)
-                                            : (
-                                                <i className="fas fa-times" style={{color: 'red'}} />
-                                              )
-                                            }
-                                        </td>
-                                        <td>
-                                            <LinkContainer to={`/order/${order._id}`}>
-                                                <Button variant="info" className="btn-sm">
-                                                    <i className="fas fa-info-circle mr-1" />
-                                                    Details
-                                                </Button>
-                                            </LinkContainer>
-                                        </td>
-                                    </tr>
-                                )) }
+                                {
+                                    orders.length !== 0 && (
+                                        orders.map((order, i) => (
+                                            <tr key={order._id}>
+                                                <td>{ i + 1 }</td>
+                                                <td>{ order._id }</td>
+                                                <td>{ order.createdAt.substring(0, 10) }</td>
+                                                <td>${ order.totalPrice }</td>
+                                                <td>{ order.isPaid
+                                                    ? order.paidAt.substring(0, 10)
+                                                    : (
+                                                        <i className="fas fa-times" style={{color: 'red'}} />
+                                                    )
+                                                }
+                                                </td>
+                                                <td>{ order.isDelivered
+                                                    ? order.deliveredAt.substring(0, 10)
+                                                    : (
+                                                        <i className="fas fa-times" style={{color: 'red'}} />
+                                                    )
+                                                }
+                                                </td>
+                                                <td>
+                                                    <LinkContainer to={`/order/${order._id}`}>
+                                                        <Button variant="info" className="btn-sm">
+                                                            <i className="fas fa-info-circle mr-1" />
+                                                            Details
+                                                        </Button>
+                                                    </LinkContainer>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )
+                                    }
                             </tbody>
                         </Table>
                        )
