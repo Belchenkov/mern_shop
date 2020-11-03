@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import {
     Form,
     Button,
@@ -22,6 +23,7 @@ const ProductEditScreen = ({ match, history }) => {
     const [category, setCategory] = useState('');
     const [countInStock, setCountInStock] = useState(0);
     const [description, setDescription] = useState('');
+    const [uploading, setUploading] = useState(false);
 
     const dispatch = useDispatch();
 
@@ -63,6 +65,30 @@ const ProductEditScreen = ({ match, history }) => {
             description,
             countInStock
         }));
+    };
+
+    const uploadFileHandler = async e => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+
+        formData.append('image', file);
+        setUploading(true);
+
+        try {
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            };
+
+            const { data } = await axios.post('/api/upload', formData, config);
+
+            setImage(data);
+            setUploading(false);
+        } catch (err) {
+            console.error(err);
+            setUploading(false);
+        }
     };
 
     return (
@@ -116,6 +142,13 @@ const ProductEditScreen = ({ match, history }) => {
                                     value={image}
                                     onChange={e => setImage(e.target.value)}
                                 />
+                                <Form.File
+                                    id="image-file"
+                                    label="Choose File"
+                                    custom
+                                    onChange={uploadFileHandler}
+                                />
+                                { uploading && <Loader /> }
                             </Form.Group>
                             <Form.Group controlId="brand">
                                 <Form.Label>
