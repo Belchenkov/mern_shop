@@ -33,6 +33,7 @@
     "express-async-handler": "*",
     "jsonwebtoken": "*",
     "mongoose": "*",
+    "morgan": "^1.10.0",
     "multer": "*"
   },
   "devDependencies": {
