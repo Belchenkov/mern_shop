@@ -35,14 +35,17 @@ function App() {
                     <Route path="/register" component={RegisterScreen} />
                     <Route path="/admin/users" component={UserListScreen} />
                     <Route path="/admin/user/:id/edit" component={UserEditScreen} />
-                    <Route path="/admin/products" component={ProductListScreen} />
+                    <Route path="/admin/products" exact component={ProductListScreen} />
+                    <Route path="/admin/products/:pageNumber" exact component={ProductListScreen} />
                     <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
                     <Route path="/admin/orders" component={OrderListScreen} />
                     <Route path="/profile" component={ProfileScreen} />
                     <Route path="/shipping" component={ShippingScreen} />
                     <Route path="/payment" component={PaymentScreen} />
                     <Route path="/place-order" component={PlaceOrderScreen} />
-                    <Route path="/search/:keyword" component={HomeScreen} />
+                    <Route path="/search/:keyword" component={HomeScreen} exact />
+                    <Route path="/page/:pageNumber" exact component={HomeScreen} />
+                    <Route path="/search/:keyword/page/:pageNumber" exact component={HomeScreen} />
                     <Route path="/" exact component={HomeScreen} />
                 </Container>
             </main>
