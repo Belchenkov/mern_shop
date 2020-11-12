@@ -31,6 +31,7 @@ export const productListReducer = (state = { products: [] }, action) => {
 
 export const productDetailsReducer = (
     state = {
+        loading: true,
         product: {
             reviews: []
         }
