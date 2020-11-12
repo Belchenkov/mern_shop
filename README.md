@@ -2,6 +2,10 @@
 
 > eCommerce platform built with the MERN stack & Redux.
 
+### [Demo](https://proshop-ab.herokuapp.com/)
+
+#### Docs/Postman
+
 #![screenshot]
 
 ## Features
