@@ -4,9 +4,9 @@
 
 ### [Demo](https://proshop-ab.herokuapp.com/)
 
-#### Docs/Postman
+#### Docs/Postman - https://github.com/Belchenkov/mern_shop/blob/deploy/docs/postman/ProShop%20(MERN-PayPal).postman_collection.json
 
-#![screenshot]
+![screenshot](https://github.com/Belchenkov/mern_shop/blob/deploy/uploads/screen.png)
 
 ## Features
 
