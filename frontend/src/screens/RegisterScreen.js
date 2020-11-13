@@ -51,70 +51,74 @@ const RegisterScreen = ({ location, history }) => {
             { error && <Message variant="danger">{error}</Message> }
             { loading && <Loader /> }
 
-            <Form onSubmit={submitHandler}>
-                <Form.Group controlId="name">
-                    <Form.Label>
-                        <i className="fas fa-address-card mr-1" />
-                        Name
-                    </Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter name"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="email">
-                    <Form.Label>
-                        <i className="fas fa-at mr-1" />
-                        Email Address
-                    </Form.Label>
-                    <Form.Control
-                        type="email"
-                        placeholder="Enter email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="password">
-                    <Form.Label>
-                        <i className="fas fa-key mr-1" />
-                        Password
-                    </Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Enter password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group controlId="confirmPassword">
-                    <Form.Label>
-                        <i className="fas fa-key mr-1" />
-                        Confirm Password
-                    </Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Confirm password"
-                        value={confirmPassword}
-                        onChange={e => setConfirmPassword(e.target.value)}
-                    />
-                </Form.Group>
-                <Button type="submit" variant="primary">
-                    <i className="fas fa-user-plus mr-1" />
-                    Register
-                </Button>
-            </Form>
+            { !loading && (
+                <>
+                    <Form onSubmit={submitHandler}>
+                        <Form.Group controlId="name">
+                            <Form.Label>
+                                <i className="fas fa-address-card mr-1" />
+                                Name
+                            </Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter name"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="email">
+                            <Form.Label>
+                                <i className="fas fa-at mr-1" />
+                                Email Address
+                            </Form.Label>
+                            <Form.Control
+                                type="email"
+                                placeholder="Enter email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="password">
+                            <Form.Label>
+                                <i className="fas fa-key mr-1" />
+                                Password
+                            </Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Enter password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group controlId="confirmPassword">
+                            <Form.Label>
+                                <i className="fas fa-key mr-1" />
+                                Confirm Password
+                            </Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Confirm password"
+                                value={confirmPassword}
+                                onChange={e => setConfirmPassword(e.target.value)}
+                            />
+                        </Form.Group>
+                        <Button type="submit" variant="primary">
+                            <i className="fas fa-user-plus mr-1" />
+                            Register
+                        </Button>
+                    </Form>
 
-            <Row className="py-4">
-                <Col>
-                    Have an Account?
-                    <Link
-                        className="ml-2 font-weight-bold"
-                        to={redirect ? `/login?redirect=${redirect}`: '/login'}
-                    >Login</Link>
-                </Col>
-            </Row>
+                    <Row className="py-4">
+                        <Col>
+                            Have an Account?
+                            <Link
+                                className="ml-2 font-weight-bold"
+                                to={redirect ? `/login?redirect=${redirect}`: '/login'}
+                            >Login</Link>
+                        </Col>
+                    </Row>
+                </>
+            ) }
         </FormContainer>
     );
 };
