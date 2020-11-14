@@ -26,16 +26,17 @@
   },
   "homepage": "https://github.com/Belchenkov/mern_shop#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "colors": "^1.4.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-async-handler": "^1.1.4",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.8"
+    "bcryptjs": "*",
+    "colors": "*",
+    "dotenv": "*",
+    "express": "*",
+    "express-async-handler": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "multer": "*"
   },
   "devDependencies": {
-    "concurrently": "^5.3.0",
-    "nodemon": "^2.0.4"
+    "concurrently": "*",
+    "nodemon": "*"
   }
 }
