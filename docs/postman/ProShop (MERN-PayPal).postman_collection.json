@@ -1,0 +1,710 @@
+{
+	"info": {
+		"_postman_id": "6546d5a4-8bf8-4914-b8b8-1f6a328cc3d9",
+		"name": "ProShop (MERN/PayPal)",
+		"description": "Shopping Cart API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GET /api/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "Get all products"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/top ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/top",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"top"
+							]
+						},
+						"description": "Get top products"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/products/:id ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/5f9acc2e5f3f792a64a58457",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5f9acc2e5f3f792a64a58457"
+							]
+						},
+						"description": "Get single product by id"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/products/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/5f9bde21e8990716c89c5f7d",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5f9bde21e8990716c89c5f7d"
+							]
+						},
+						"description": "Updated product by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "Add New Product"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/products/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/5f7d862e53d66b255447cfb5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5f7d862e53d66b255447cfb5"
+							]
+						},
+						"description": "Delete product by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/uploads",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/api/upload",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"upload"
+							]
+						},
+						"description": "Upload Image"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/products/:id/reviews ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 5,\r\n    \"comment\": \"These are great product\"\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/5f9acc2e5f3f792a64a58457/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5f9acc2e5f3f792a64a58457",
+								"reviews"
+							]
+						},
+						"description": "Add new product review"
+					},
+					"response": []
+				}
+			],
+			"description": "All routes that have to do with products",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users & Auth",
+			"item": [
+				{
+					"name": "Post /api/users/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b900322c-c075-4daa-9f3e-dd211afb39e6",
+								"exec": [
+									"pm.environment.set(\"TOKEN\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"john@example.com\",\r\n    \"password\": \"12qwasZX\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "Auth user & get token"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q4NjJlNTNkNjZiMjU1NDQ3Y2ZhZSIsImlhdCI6MTYwMjY2ODU0MiwiZXhwIjoxNjA1MjYwNTQyfQ.F3dLWcAK825iRb3aAUZZIpA6ve58sd_rmTE1ChH3LOo",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Return logged in user"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Belchenkov\",\r\n    \"email\": \"u608110@gmail.com\",\r\n    \"password\": 123456\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Create new user"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Belchenkov Aleksey\",\r\n    \"email\": \"u608110@gmail.com\",\r\n    \"password\": \"12qwasZX\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "Update User Profile"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q4NjJlNTNkNjZiMjU1NDQ3Y2ZhZSIsImlhdCI6MTYwMjY2ODU0MiwiZXhwIjoxNjA1MjYwNTQyfQ.F3dLWcAK825iRb3aAUZZIpA6ve58sd_rmTE1ChH3LOo",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Get all users. Admin only\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE /api/users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q4NjJlNTNkNjZiMjU1NDQ3Y2ZhZSIsImlhdCI6MTYwMjY2ODU0MiwiZXhwIjoxNjA1MjYwNTQyfQ.F3dLWcAK825iRb3aAUZZIpA6ve58sd_rmTE1ChH3LOo",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/5f97f9b5bd9dfd13d401d7c7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5f97f9b5bd9dfd13d401d7c7"
+							]
+						},
+						"description": "Delete user by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmN2Q4NjJlNTNkNjZiMjU1NDQ3Y2ZhZSIsImlhdCI6MTYwMjY2ODU0MiwiZXhwIjoxNjA1MjYwNTQyfQ.F3dLWcAK825iRb3aAUZZIpA6ve58sd_rmTE1ChH3LOo",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/5f7d862e53d66b255447cfae",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5f7d862e53d66b255447cfae"
+							]
+						},
+						"description": "Get user by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Belchenkov Aleksey\",\r\n    \"email\": \"u608110@gmail.com\",\r\n    \"isAdmin\": false\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/5f7d862e53d66b255447cfae",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"5f7d862e53d66b255447cfae"
+							]
+						},
+						"description": "Update User by ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Routes that have to do with managing users and authentication",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "PUT /api/orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [],\r\n    \"shippingAddress\": \"Moscow\",\r\n    \"paymentMethod\": \"stripe\",\r\n    \"itemsPrice\": 34,\r\n    \"taxPrice\": 13,\r\n    \"shippingPrice\": 10,\r\n    \"totalPrice\": 200\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Update User Profile"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/orders/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderItems\": [],\r\n    \"shippingAddress\": \"Moscow\",\r\n    \"paymentMethod\": \"stripe\",\r\n    \"itemsPrice\": 34,\r\n    \"taxPrice\": 13,\r\n    \"shippingPrice\": 10,\r\n    \"totalPrice\": 200\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/orders/5f900a80aaf4e63168878378",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"5f900a80aaf4e63168878378"
+							]
+						},
+						"description": "Get an order by ID"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/orders/my-orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/orders/my-orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"my-orders"
+							]
+						},
+						"description": "Get logged in users orders"
+					},
+					"response": []
+				}
+			],
+			"description": "Manage Orders\r\n",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
